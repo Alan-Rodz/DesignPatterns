@@ -1,0 +1,3 @@
+Behavioral Design Patterns provide solutions for better interactions between 
+objects, and solve problems relating to the need of loose coupling, flexibility
+and easy extension in the future (how objects communicate with each other)

@@ -1,0 +1,2 @@
+Structural Design Patterns deal with class structure, such as inheritance 
+and composition (how objects relate to each other)
