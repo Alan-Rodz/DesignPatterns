@@ -119,6 +119,11 @@ interface Buffet {
 /*Abstract Handler*/
 abstract class AbstractBuffet implements Buffet {
   private nextBuffet: Buffet;
+  public menu: string[];
+  
+  constructor(menu: string[]) {
+    this.menu = menu;
+  }
 
   public passToNextBuffet(nextBuffet: Buffet): Buffet {
     this.nextBuffet = nextBuffet;
@@ -136,7 +141,6 @@ abstract class AbstractBuffet implements Buffet {
 
 /*Concrete Handler*/
 class JapaneseFoodBuffet extends AbstractBuffet {
-  public menu: string[];
   public addToMenu(foodType: string): string {
     if (foodType === 'Sushi' || foodType === 'Yakimeshi' && !this.menu.includes(foodType)) {
       this.menu.push(foodType);
@@ -174,8 +178,8 @@ const buffetClientCode = (buffet: Buffet) => {
   }
 }
 
-const japaneseFoodBuffet = new JapaneseFoodBuffet();
-const mexicanFoodBuffet = new MexicanFoodBuffet();
+const japaneseFoodBuffet = new JapaneseFoodBuffet([]);
+const mexicanFoodBuffet = new MexicanFoodBuffet([]);
 japaneseFoodBuffet.passToNextBuffet(mexicanFoodBuffet);
 
 buffetClientCode(japaneseFoodBuffet);
