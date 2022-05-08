@@ -1,4 +1,4 @@
 # Design Patterns
-Design Pattern Examples in TypeScript  
+Design Pattern Examples in TypeScript with example situations    
 
 REF: https://refactoring.guru/
